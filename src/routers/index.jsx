@@ -20,6 +20,7 @@ const Router = () => {
         <Route path="/" element={<Auth />}>
           <Route path="/categories" element={<Categories />} />
           <Route path="/product-create" element={<ProductCreate />} />
+          <Route path="/category-create/:id" element={<CategoryCreate />} />
           <Route path="/category-create" element={<CategoryCreate />} />
           <Route path="/admin" element={<Admin />} />
         </Route>

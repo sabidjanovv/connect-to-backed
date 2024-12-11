@@ -19,6 +19,12 @@ const Admin = () => {
           Create Category
         </button>
         <button
+          onClick={() => navigate("/categories")}
+          className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+        >
+          Categories
+        </button>
+        <button
           onClick={() => navigate("/product-create")}
           className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
         >

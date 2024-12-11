@@ -1,10 +1,12 @@
 import { request } from "@/api";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const ProductCreate = () => {
   const token = useSelector((s) => s.token.value);
   const [categories, setCategories] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     request.get("/product-category/get").then((res) => {
@@ -32,6 +34,14 @@ const ProductCreate = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 w-full max-w-md">
+        <div className="mb-4">
+          <button
+            onClick={() => navigate(-1)} // Navigate to the previous page
+            className="px-4 py-2 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 transition-colors"
+          >
+            Back
+          </button>
+        </div>
         <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
           Create Product
         </h2>
@@ -84,6 +94,7 @@ const ProductCreate = () => {
             required
           />
           <button
+            onClick={() => navigate("/")}
             type="submit"
             className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors"
           >

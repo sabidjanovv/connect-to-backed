@@ -21,14 +21,14 @@ const Header = () => {
           >
             Home
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/categories"
             className={({ isActive }) =>
               `hover:text-blue-400 ${isActive ? activeClass : ""}`
             }
           >
             Categories
-          </NavLink>
+          </NavLink> */}
           <NavLink
             to="/register"
             className={({ isActive }) =>
