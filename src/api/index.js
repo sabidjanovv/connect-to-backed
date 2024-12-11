@@ -1,7 +1,7 @@
-import axios from "axios"
+import axios from "axios";
 
 const request = axios.create({
-    baseURL: "http://45.130.148.178:3003"
-})
+  baseURL: import.meta.env.VITE_BASE_URL || "http://45.130.148.178:3003",
+});
 
-export {request}
+export { request };
