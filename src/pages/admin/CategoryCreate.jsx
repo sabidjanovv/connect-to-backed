@@ -54,18 +54,18 @@ const CategoryCreate = () => {
   };
 
   const handleBack = () => {
-    navigate("/admin"); // Navigate to the admin page or replace with desired route
+    navigate("/admin");
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 w-full max-w-md">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-green-400 to-teal-500">
+      <div className="bg-white shadow-lg rounded px-8 pt-6 pb-8 w-full max-w-md">
         <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
           {id ? "Edit Category" : "Create Category"}
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
-            className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-green-400"
             type="text"
             name="name"
             placeholder="Category Name"
@@ -74,7 +74,7 @@ const CategoryCreate = () => {
             required
           />
           <textarea
-            className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-green-400"
             name="description"
             placeholder="Category Description"
             rows="4"
@@ -84,8 +84,8 @@ const CategoryCreate = () => {
             }
             required
           ></textarea>
-          {error && <p className="text-red-500 text-sm">{error}</p>}
-          <div className="flex justify-between">
+          {error && <p className="text-red-600 text-sm text-center">{error}</p>}
+          <div className="flex justify-between items-center">
             <button
               type="button"
               onClick={handleBack}
@@ -95,7 +95,11 @@ const CategoryCreate = () => {
             </button>
             <button
               type="submit"
-              className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors"
+              className={`py-2 px-4 rounded-md text-white font-semibold ${
+                loading
+                  ? "bg-green-300 cursor-not-allowed"
+                  : "bg-green-500 hover:bg-green-600"
+              } transition-colors`}
               disabled={loading}
             >
               {loading

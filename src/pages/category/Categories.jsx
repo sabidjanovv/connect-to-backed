@@ -45,9 +45,34 @@ const Categories = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold text-gray-800 mb-5">Categories</h1>
-      <Category data={category} onEdit={handleEdit} onDelete={handleDelete} />
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 p-8">
+      <div className="container mx-auto">
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-3xl font-extrabold text-purple-700">
+            Categories
+          </h1>
+          <button
+            onClick={() => navigate("/category-create")}
+            className="bg-purple-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-purple-700 transition"
+          >
+            Add Category
+          </button>
+        </div>
+        <div className="bg-white shadow-xl rounded-lg p-8">
+          {category.length > 0 ? (
+            <Category
+              data={category}
+              onEdit={handleEdit}
+              onDelete={handleDelete}
+            />
+          ) : (
+            <p className="text-gray-600 text-center">
+              No categories available. Click the "Add Category" button to create
+              one.
+            </p>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

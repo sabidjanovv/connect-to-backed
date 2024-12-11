@@ -28,34 +28,41 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 w-full max-w-md">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-          Login
+    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white">
+      <div className="bg-white text-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 className="text-4xl font-bold text-center text-blue-600 mb-6">
+          Sign In
         </h2>
-        <form onSubmit={handleSignIn} className="space-y-4">
-          <input
-            className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-          />
-          <input
-            className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-          />
+        <p className="text-center text-gray-600 mb-4">
+          Login to access the admin panel.
+        </p>
+        <form onSubmit={handleSignIn} className="space-y-5">
+          <div>
+            <input
+              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div>
+            <input
+              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+          </div>
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-2 rounded-md text-white ${
+            className={`w-full py-3 rounded-md text-white font-semibold transition-colors ${
               loading
                 ? "bg-blue-300 cursor-not-allowed"
-                : "bg-blue-500 hover:bg-blue-600"
-            } transition-colors`}
+                : "bg-blue-600 hover:bg-blue-700"
+            }`}
           >
             {loading ? "Loading..." : "Sign In"}
           </button>
