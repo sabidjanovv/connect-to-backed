@@ -1,7 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+  const token = useSelector((s) => s.token.value);
   const activeClass = "text-blue-500 border-b-2 border-blue-500";
 
   return (
@@ -37,14 +39,25 @@ const Header = () => {
           >
             Register
           </NavLink>
-          <NavLink
-            to="/login"
-            className={({ isActive }) =>
-              `hover:text-blue-400 ${isActive ? activeClass : ""}`
-            }
-          >
-            Login
-          </NavLink>
+          {token ? (
+            <NavLink
+              to={"/admin"}
+              className={({ isActive }) =>
+                `hover:text-blue-400 ${isActive ? activeClass : ""}`
+              }
+            >
+              Admin
+            </NavLink>
+          ) : (
+            <NavLink
+              to={"/login"}
+              className={({ isActive }) =>
+                `hover:text-blue-400 ${isActive ? activeClass : ""}`
+              }
+            >
+              Login
+            </NavLink>
+          )}
         </div>
       </nav>
     </header>
