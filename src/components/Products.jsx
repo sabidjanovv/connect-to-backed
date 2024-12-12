@@ -14,9 +14,13 @@ const Products = ({ data }) => {
         className="w-full h-60 object-cover rounded-md mb-4"
       />
       <h3 className="text-xl font-semibold text-gray-800">{product.name}</h3>
-      <p className="text-md text-gray-600 mt-2 font-medium">
-        {product.price} USD
+      <p className="text-md text-gray-700 mt-2 font-medium">
+        {product.price}{" "}
+        <span className="text-md text-green-600 mt-2 font-medium">USD</span>
       </p>
+      {/* <p className="text-md text-gray-600 mt-2 font-medium">
+        {product.id} id
+      </p> */}
     </div>
   ));
 
