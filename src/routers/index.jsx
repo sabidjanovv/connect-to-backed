@@ -9,6 +9,7 @@ import Auth from "../pages/auth/Auth";
 import ProductCreate from "../components/ProductCreate";
 import Categories from "../pages/category/Categories";
 import CategoryCreate from "../pages/admin/CategoryCreate";
+import NotFound from "../pages/notFound/NotFound";
 
 const Router = () => {
   return (
@@ -25,6 +26,7 @@ const Router = () => {
           <Route path="/admin" element={<Admin />} />
         </Route>
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
